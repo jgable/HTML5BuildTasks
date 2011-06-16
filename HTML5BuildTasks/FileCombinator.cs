@@ -22,7 +22,7 @@ namespace HTML5BuildTasks
     /// </summary>
     TextLine,
     /// <summary>
-    /// Combine javascript file
+    /// Combine javascript file.  The next file is added after a semi-colon and a new line.
     /// </summary>
     Javascript
   }
@@ -72,7 +72,7 @@ namespace HTML5BuildTasks
     /// <summary>
     /// Executes this instance.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>true if success; otherwise, false.</returns>
     public override bool Execute()
     {
       if (string.IsNullOrEmpty(this.TargetFile.ItemSpec))
