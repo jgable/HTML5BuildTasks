@@ -39,6 +39,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSSMin.cs" />
     <Compile Include="FileCombinator.cs" />
     <Compile Include="JSMin.cs" />
   </ItemGroup>

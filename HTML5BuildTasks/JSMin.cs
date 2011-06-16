@@ -35,7 +35,10 @@ SOFTWARE.
 
 namespace Portal.Web.API
 {
-    public class JavaScriptMinifier
+    // TODO: I know Douglas Crockford is a legend and all that; but this code is garbage.  
+    //       Clean it up; e.g. shared variables, meaningless parameter names, no documentation and more C# style.
+
+    public class JSMin
     {
         const int EOF = -1;
 
