@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Build.Utilities;
-using Microsoft.Build.Framework;
-using System.IO;
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Build.Framework;
+using Microsoft.Build.Utilities;
 
-namespace FrogMSBuild
+namespace HTML5BuildTasks
 {
   public enum CombinationMode
   {
@@ -28,6 +27,9 @@ namespace FrogMSBuild
     Javascript
   }
 
+  /// <summary>
+  /// Combines a set of files as Binary, Text, TextLine, or Javascript.
+  /// </summary>
   public class FileCombinator : Task
   {
 
@@ -42,7 +44,7 @@ namespace FrogMSBuild
     /// </summary>
     public bool RemoveSourceFiles { get; set; }
 
-    private CombinationMode mode = FrogMSBuild.CombinationMode.TextLine;
+    private CombinationMode mode = HTML5BuildTasks.CombinationMode.TextLine;
     /// <summary>
     /// Gets or sets the combination mode.
     /// </summary>
@@ -99,7 +101,7 @@ namespace FrogMSBuild
 
         switch (this.mode)
         {
-          case FrogMSBuild.CombinationMode.Binary:
+          case HTML5BuildTasks.CombinationMode.Binary:
             using (FileStream fs = new FileStream(this.TargetFile.ItemSpec, FileMode.Create, FileAccess.Write, FileShare.None, 0x8000))
             {
               byte[] buffer = new byte[0x8000];
@@ -120,8 +122,8 @@ namespace FrogMSBuild
             }
             break;
           default:            //case CombinationMode.Text:            //case CombinationMode.TextLine:
-            bool newLine = this.mode != FrogMSBuild.CombinationMode.Text;
-            bool isJavascript = this.mode == FrogMSBuild.CombinationMode.Javascript;
+            bool newLine = this.mode != HTML5BuildTasks.CombinationMode.Text;
+            bool isJavascript = this.mode == HTML5BuildTasks.CombinationMode.Javascript;
             using (StreamWriter sw = File.CreateText(this.TargetFile.ItemSpec))
             {
               foreach (ITaskItem item in this.SourceFiles)
