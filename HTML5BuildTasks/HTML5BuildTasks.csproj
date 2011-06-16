@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileCombinator.cs" />
+    <Compile Include="JSMin.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
