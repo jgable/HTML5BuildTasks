@@ -33,7 +33,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-namespace Portal.Web.API
+namespace HTML5BuildTasks
 {
     // TODO: I know Douglas Crockford is a legend and all that; but this code is garbage.  
     //       Clean it up; e.g. shared variables, meaningless parameter names, no documentation and more C# style.
